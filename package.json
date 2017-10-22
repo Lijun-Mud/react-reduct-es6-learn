@@ -2,6 +2,10 @@
   "name": "react_reduct_es6_learn",
   "private": true,
   "version": "0.0.0",
+  "scripts": {
+    "webpack-dev": "webpack",
+    "webpack-dev-css": "webpack --config webpack.config.vendor.js  && npm run webpack-dev"
+  },
   "dependencies": {
     "@types/history": "4.6.0",
     "@types/react": "15.0.35",
