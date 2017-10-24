@@ -5,17 +5,6 @@
 //import { PropTypes } from 'react';
 //import * as React from 'react';
 
-
-//interface TextInputProps extends React.Props<HTMLInputElement> {
-//    name: string,
-//    label: string,
-//    //onChange: Function,
-//    onChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>>,
-//    placeholder: string,
-//    value: string,
-//    error:string,
-//}
-
 //const TextInput=({name,label,onChange,placeHolder,value,error}) => {
 //    let wrapperClass = 'form-group';
 //    if (error && error.length > 0) {
@@ -36,6 +25,15 @@
 //               </div>
 //        </div>
 //    );
+//}
+
+//TextInput.prototype= {
+//    name: PropTypes.string.isRequired,
+//    label: PropTypes.string.isRequired,
+//    onChange: PropTypes.func.isRequired,
+//    placeholder: PropTypes.string,
+//    value: PropTypes.string,
+//    error: PropTypes.string,
 //}
 
 //export default TextInput;

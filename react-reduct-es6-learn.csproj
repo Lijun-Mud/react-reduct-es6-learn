@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.4</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -21,11 +21,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\components\common\TextInput.old.tsx1" />
     <None Remove="ClientApp\components\common\TextInput.tsx" />
+    <None Remove="ClientApp\components\course\Course.tsx" />
+    <None Remove="ClientApp\store\actionTypes.ts" />
+    <None Remove="ClientApp\store\common.ts" />
+    <None Remove="ClientApp\store\Course.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\common\TextInput.old.tsx" />
     <TypeScriptCompile Include="ClientApp\components\common\TextInput.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\course\Course.tsx" />
+    <TypeScriptCompile Include="ClientApp\store\actionTypes.ts" />
+    <TypeScriptCompile Include="ClientApp\store\common.ts" />
+    <TypeScriptCompile Include="ClientApp\store\Course.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
