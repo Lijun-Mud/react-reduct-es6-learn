@@ -6,10 +6,18 @@ import * as CourseStore from '../../store/Course';
 
 type CourseProps = CourseStore.CourseState & typeof CourseStore.actionCreators & RouteComponentProps<{}>;
 
-class Course extends React.Component<CourseProps,{}> {
+class Course extends React.Component<CourseProps, {}> {
+    componentWillMount() {
+        this.props.requestCourses();
+    }
+
     public render() {
+        let courses = this.props.courses;
         return <div>
-                   courses
+            courses:{this.props.isLoading.toString()}
+            <ul>
+            {courses.map(course =><li key={course.length}>{course.title}</li>)}
+            </ul>
                </div>;
     };
 }
