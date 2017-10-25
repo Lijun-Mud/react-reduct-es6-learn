@@ -20,7 +20,7 @@ export interface Course {
 
 export interface CourseState {
     isLoading: boolean,
-    coursed: Course[],
+    courses: Course[],
     error?:{},
 }
 
@@ -40,7 +40,7 @@ interface ReceiveCourseFailedAction {
 
 type KnownAction = LoadCourseAction | ReceiveCourseAction | ReceiveCourseFailedAction;
 
-export  const actionCreator= {
+export  const actionCreators= {
     requestCourses:():AppThunkAction<KnownAction>=>(dispatch, getState) => {
         let fetchTask = CourseApi.getAllCourses().then((data) => {
             const courses = <Course[]>data;
@@ -53,21 +53,29 @@ export  const actionCreator= {
     }
 }
 
+const unloadedState: CourseState = { isLoading: false, courses: [] };
+
 export const reducer:Reducer<CourseState>=(state: CourseState, imcomingAction: Action) => {
     const action = imcomingAction as KnownAction;
     switch (action.type) {
         case LOAD_COURSES:
             return <CourseState>{
                 isLoading: true,
-                coursed: []
+                courses: []
             };
         case RECEIVE_COURSES:
             return <CourseState>{
                 isLoading: false,
-                coursed: action.courses
+                courses: action.courses
+            };
+        case RECEIVE_COURSES_FAILED:
+            return <CourseState>{
+                isLoading: false,
+                courses: [],
+                error: action.error
             };
         default:
             const exhaustiveCheck = <never> action;
     }
-    return state;
+    return state || unloadedState;
 }
