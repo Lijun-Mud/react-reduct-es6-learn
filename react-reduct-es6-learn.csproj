@@ -24,6 +24,7 @@
     <None Remove="ClientApp\components\common\TextInput.old.tsx1" />
     <None Remove="ClientApp\components\common\TextInput.tsx" />
     <None Remove="ClientApp\components\course\Course.tsx" />
+    <None Remove="ClientApp\components\course\CourseList.tsx" />
     <None Remove="ClientApp\store\actionTypes.ts" />
     <None Remove="ClientApp\store\common.ts" />
     <None Remove="ClientApp\store\Course.ts" />
@@ -33,6 +34,7 @@
     <TypeScriptCompile Include="ClientApp\components\common\TextInput.old.tsx" />
     <TypeScriptCompile Include="ClientApp\components\common\TextInput.tsx" />
     <TypeScriptCompile Include="ClientApp\components\course\Course.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\course\CourseList.tsx" />
     <TypeScriptCompile Include="ClientApp\store\actionTypes.ts" />
     <TypeScriptCompile Include="ClientApp\store\common.ts" />
     <TypeScriptCompile Include="ClientApp\store\Course.ts" />

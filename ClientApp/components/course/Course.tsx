@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {ApplicationState} from '../../store/index';
 import * as CourseStore from '../../store/Course';
+import {CourseList} from './CourseList';
 
 type CourseProps = CourseStore.CourseState & typeof CourseStore.actionCreators & RouteComponentProps<{}>;
 
@@ -16,7 +17,7 @@ class Course extends React.Component<CourseProps, {}> {
         return <div>
             courses:{this.props.isLoading.toString()}
             <ul>
-            {courses.map(course =><li key={course.length}>{course.title}</li>)}
+            <CourseList courses={courses} />
             </ul>
                </div>;
     };
