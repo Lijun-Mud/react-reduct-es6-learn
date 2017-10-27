@@ -15,7 +15,8 @@ export interface Course {
     title: string,
     authorId: string,
     category: string,
-    length:string,
+    length: string,
+    watchHref:string,
 }
 
 export interface CourseState {
